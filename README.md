@@ -1,16 +1,17 @@
-### Hi there 👋
+## Hi there 👋
 
-<!--
-**ries9112/ries9112** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### My name is Riccardo but I go by Ricky. I love R and cryptocurrencies. Below is a price chart of Ethereum prices, powered by R, GitHub actions and MySQL, which updates once every hour.
 
-Here are some ideas to get you started:
+![eth prices](eth_prices.png)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+
+
+
+
+
+###### [Original tweet by Simon Willison](https://twitter.com/simonw/status/1281435464474324993)
+
+###### [Original blog post by Simon Willison](https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/)
+
+###### [R Adaptation by Zhi Yang](https://twitter.com/zhiiiyang/status/1281996703839608833)
