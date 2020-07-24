@@ -20,12 +20,10 @@ jobs:
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
-      - name: Commit files
+      - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
           git add .
           git commit -m "Update GitHub readme" -a
-      - name: Push
-        run: |-
           git push origin master
