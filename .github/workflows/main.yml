@@ -28,7 +28,4 @@ jobs:
           git commit -m "Update GitHub readme" -a
       - name: Push
         run: |-
-          Rscript -e """system('git config --local user.email "ries9112@colorado.edu"')"""
-          Rscript -e """system('git config --local user.name "ries9112"')"""
-          Rscript -e """system('git commit -m "Update GitHub readme" -a')"""
-          Rscript -e "system('git push origin master')"
+          git push origin master
