@@ -9,7 +9,7 @@ messari <- get_crypto_data()
 eth_data <- subset(messari, Name == 'Ethereum')
 
 # Convert date/time
-messari$DateTimeColoradoMST <- anytime(messari$DateTimeColoradoMST)
+eth_data$DateTimeColoradoMST <- anytime(eth_data$DateTimeColoradoMST)
 
 # Make ggplot of ETH data:
 ggplot(data = eth_data,
