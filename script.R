@@ -13,7 +13,7 @@ messari$DateTimeColoradoMST <- anytime(messari$DateTimeColoradoMST)
 
 # Make ggplot of ETH data:
 ggplot(data = eth_data,
-       aes(x = date_time_colorado_mst, y = sell_price_high_bid)) + 
+       aes(x = DateTimeColoradoMST, y = PriceUSD)) + 
        geom_line()
 # Save png
 ggsave('eth_plot.png')
