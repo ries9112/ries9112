@@ -20,6 +20,8 @@ jobs:
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
+      - name: Install npm
+        uses: actions/setup-node@v1
       - name: Commit files
         run: |
           git config --local user.email "ries9112@colorado.edu"
