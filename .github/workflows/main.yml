@@ -26,4 +26,4 @@ jobs:
           git config --local user.name "ries9112"
           git add .
           git commit -m "Update GitHub readme" -a
-          git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:${{ github.ref }} 
+          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112.git HEAD:master
