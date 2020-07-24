@@ -5,6 +5,7 @@
 
 <img src="https://github.com/ries9112/ries9112/blob/master/eth_plot.png" width="400">   
 
+The past ~4 months of data are being shown, and the image updates hourly.
 
 ###### [data source](https://messari.io/)
 
