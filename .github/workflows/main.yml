@@ -2,7 +2,7 @@ name: Show latest crypto data
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron:  '40 * * * *'
       
@@ -20,15 +20,10 @@ jobs:
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
-      - name: Commit files
+      - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
           git add .
           git commit -m "Update GitHub readme" -a
-      - name: Push
-        run: |-
-          Rscript -e "library(fs)"
-          Rscript -e "system('git push origin master')"
-
-
+          git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/ries9112.git HEAD:master
