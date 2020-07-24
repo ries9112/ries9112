@@ -3,7 +3,7 @@
 ### My name is Riccardo but I go by Ricky. I love R and cryptocurrencies. 
 ### Below is a price chart of Ethereum prices, powered by R, GitHub actions and MySQL, which updates once every hour.
 
-![](eth_plot.png)
+![ETH price](eth_plot.png)
 
 ###### [data source](https://messari.io/)
 
