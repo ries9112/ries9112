@@ -3,7 +3,7 @@ library(ggplot2)
 library(anytime)
 
 # Pull Messari data:
-messari_data <- get_crypto_data()
+messari <- get_crypto_data()
 
 # Subset to ETH data:
 eth_data <- subset(messari, Name == 'Ethereum')
