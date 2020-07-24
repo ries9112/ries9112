@@ -16,8 +16,8 @@ eth_data$DateTimeColoradoMST <- anytime(eth_data$DateTimeColoradoMST)
 ggplot(data = eth_data,
        aes(x = DateTimeColoradoMST, y = PriceUSD)) + 
        geom_line() +
-       labs(title='Ethereum Price Over Time',
-            subtitle=paste('Latest data from:', max(eth_data$DateTimeColoradoMST)),
+       labs(title='Ethereum (ETH) Price Over Time',
+            subtitle=paste('Latest data from:', max(eth_data$DateTimeColoradoMST), ' - MST'),
             caption='Data source: messari.io') + 
        stat_smooth() + 
        theme_economist() +
