@@ -1,4 +1,4 @@
-name: Show latest crypto data
+name: Hourly Update Chart GIF
 
 on:
   push:
