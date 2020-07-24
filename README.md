@@ -11,7 +11,7 @@
 
 
 
-### How do you do this to your own GitHub profile?
+### How do you add a page like this to your own GitHub profile?
 
 ###### [Original tweet by Simon Willison](https://twitter.com/simonw/status/1281435464474324993)
 
