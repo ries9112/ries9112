@@ -5,7 +5,7 @@
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot.gif" width="500">   
 
-The past 31 days of data are being shown, and the image updates hourly.
+The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
 ###### [data source](https://messari.io/)
 
