@@ -28,7 +28,6 @@ jobs:
           git commit -m "Update GitHub readme" -a
       - name: Push
         run: |-
-          Rscript -e "library(fs)"
           Rscript -e "system('git push origin master')"
 
 
