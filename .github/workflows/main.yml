@@ -2,7 +2,7 @@ name: Show latest crypto data
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron:  '40 * * * *'
       
@@ -28,5 +28,4 @@ jobs:
           git commit -m "Update GitHub readme" -a
       - name: Push
         run: |-
-          Rscript -e "system('git checkout -b new_image')"
-          Rscript -e "system('git push -u origin new_image')"
+          Rscript -e "system('git push origin HEAD:master')"
