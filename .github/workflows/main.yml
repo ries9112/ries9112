@@ -1,4 +1,4 @@
-name: Show last tweet
+name: Show latest crypto data
 
 on:
   push:
@@ -24,6 +24,7 @@ jobs:
         run: |
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
+          git add .
           git commit -m "Update GitHub readme" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
