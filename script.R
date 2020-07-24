@@ -1,6 +1,7 @@
 library(PredictCrypto)
 library(ggplot2)
 library(anytime)
+library(ggthemes)
 
 # Pull Messari data:
 messari <- get_crypto_data()
@@ -17,6 +18,10 @@ ggplot(data = eth_data,
        geom_line() +
        labs(title='Ethereum Price Over Time',
             subtitle=paste('Latest data from:', max(eth_data$DateTimeColoradoMST)),
-            caption='Data source: messari.io')
+            caption='Data source: messari.io') + 
+       stat_smooth() + 
+       theme_economist() +
+       xlab('Date Time Collected (Colorado - MST)') +
+       ylab('Price USD ($)')
 # Save png
 ggsave('eth_plot.png')
