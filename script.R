@@ -3,10 +3,10 @@ library(ggplot2)
 library(anytime)
 
 # Pull Messari data:
-messari <- get_crypto_data()
+messari_data <- get_crypto_data()
 
 # Subset to ETH data:
-messari <- subset(messari, Name == 'Ethereum')
+eth_data <- subset(messari, Name == 'Ethereum')
 
 # Convert date/time
 messari$DateTimeColoradoMST <- anytime(messari$DateTimeColoradoMST)
