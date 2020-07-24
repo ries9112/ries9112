@@ -3,13 +3,12 @@
 ### My name is Riccardo but I go by Ricky. I love R and cryptocurrencies. 
 ### Below is a price chart of Ethereum prices, powered by R, GitHub actions and MySQL, which updates once every hour.
 
-<img src="https://github.com/ries9112/ries9112/blob/master/eth_plot.png" width="600">   
+<img src="https://github.com/ries9112/ries9112/blob/master/eth_plot.png" width="400">   
 
 
 ###### [data source](https://messari.io/)
 
 ## [Click here to access interactive tutorials using this same data, which refreshes hourly](https://predictcrypto.org/tutorials)
-
 
 
 ### How do you add a page like this to your own GitHub profile?
