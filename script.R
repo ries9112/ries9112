@@ -35,7 +35,7 @@ anim <- animate(ggplot(data = messari,
                 ggtitle('{closest_state} Price USD Last 31 Days') +
                 view_follow(),fps=1)
 
-# Delete image before making new one
+# Delete animation before making new one
 file_delete('crypto_plot.gif')
 
 # Save gif
