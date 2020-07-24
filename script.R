@@ -6,16 +6,10 @@ library(fs)
 library(gganimate)
 library(magick)
 
-# NOTE 07/23 BEFORE BED: DON'T COMMIT
-# - DON'T COMMIT BECAUSE MOVING AWAY FROM STATIC 1 CRYPTO PHOTO, TO NEW SYSTEM
-#WHERE TAKE TOP 20 RANKED AND TAKE LAST 14 DAYS, AND MAKE IT INTO GIF/VIDEO USING
-#GGANIMATE. STILL WORKING ON GETTING THIS TO WORK THOUGH, SO UNTIL THEN,
-#DO NOT COMMIT!
-
 # Pull Messari data:
 messari <- get_crypto_data()
 
-# Filter data to top 50 ranked cryptos
+# Filter data to top 20 ranked cryptos
 messari <- subset(messari, Rank < 20)
 
 # Convert date/time
