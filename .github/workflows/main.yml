@@ -16,7 +16,7 @@ jobs:
         run: |-
           Rscript -e "install.packages('remotes')"
           Rscript -e "remotes::install_github('ries9112/PredictCrypto')"
-          Rscript -e "install.packages(c('pins', 'ggplot2','anytime','ggthemes'))"
+          Rscript -e "install.packages(c('pins', 'ggplot2','anytime','ggthemes','fs'))"
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
