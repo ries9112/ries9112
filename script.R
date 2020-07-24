@@ -2,6 +2,7 @@ library(PredictCrypto)
 library(ggplot2)
 library(anytime)
 library(ggthemes)
+library(fs)
 
 # Pull Messari data:
 messari <- get_crypto_data()
@@ -23,5 +24,9 @@ ggplot(data = eth_data,
        theme_economist() +
        xlab('Date Time Collected (Colorado - MST)') +
        ylab('Price USD ($)')
+
+# Delete image before making new one
+file_delete('eth_plot.png')
+
 # Save png
 ggsave('eth_plot.png')
