@@ -20,15 +20,15 @@ jobs:
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
-      - name: Install npm
-        uses: actions/setup-node@v1
       - name: Commit files
         run: |
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
           git add .
           git commit -m "Update GitHub readme" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PAT_GITHUB }}
+      - name: Push
+        run: |-
+          Rscript -e "library(fs)"
+          Rscript -e "system('git push origin master')"
+
+
