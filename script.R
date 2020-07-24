@@ -3,30 +3,43 @@ library(ggplot2)
 library(anytime)
 library(ggthemes)
 library(fs)
+library(gganimate)
+library(magick)
+
+# NOTE 07/23 BEFORE BED: DON'T COMMIT
+# - DON'T COMMIT BECAUSE MOVING AWAY FROM STATIC 1 CRYPTO PHOTO, TO NEW SYSTEM
+#WHERE TAKE TOP 20 RANKED AND TAKE LAST 14 DAYS, AND MAKE IT INTO GIF/VIDEO USING
+#GGANIMATE. STILL WORKING ON GETTING THIS TO WORK THOUGH, SO UNTIL THEN,
+#DO NOT COMMIT!
 
 # Pull Messari data:
 messari <- get_crypto_data()
 
-# Subset to ETH data:
-eth_data <- subset(messari, Name == 'Ethereum')
+# Filter data to top 50 ranked cryptos
+messari <- subset(messari, Rank < 20)
 
 # Convert date/time
-eth_data$DateTimeColoradoMST <- anytime(eth_data$DateTimeColoradoMST)
+messari$DateTimeColoradoMST <- as.POSIXct(messari$DateTimeColoradoMST, format="%Y-%m-%d %H:%M:%S")
 
-# Make ggplot of ETH data:
-ggplot(data = eth_data,
-       aes(x = DateTimeColoradoMST, y = PriceUSD)) + 
-       geom_line() +
-       labs(title='Ethereum (ETH) Price Over Time',
-            subtitle=paste('Latest data from:', max(eth_data$DateTimeColoradoMST), ' - MST'),
-            caption='Data source: messari.io') + 
-       stat_smooth() + 
-       theme_economist() +
-       xlab('Date Time Collected (Colorado - MST)') +
-       ylab('Price USD ($)')
+# Filter data to last 31 days
+messari <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*31)
+
+# Make gganimated plot of ETH data:
+anim <- animate(ggplot(data = messari,
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
+                geom_line() +
+                labs(subtitle=paste('Latest data collected on:', max(messari$DateTimeColoradoMST), ' - MST'),
+                     caption='Data source: messari.io') + 
+                stat_smooth() + 
+                theme_economist() +
+                xlab('Date Time Collected (Colorado - MST)') +
+                ylab('Price USD ($)') +
+                transition_states(Name) +
+                ggtitle('{closest_state} Price USD Last 31 Days') +
+                view_follow(),fps=1)
 
 # Delete image before making new one
-file_delete('eth_plot.png')
+file_delete('crypto_plot.gif')
 
-# Save png
-ggsave('eth_plot.png')
+# Save gif
+image_write(anim, path='crypto_plot.gif')
