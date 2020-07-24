@@ -28,6 +28,5 @@ jobs:
           git commit -m "Update GitHub readme" -a
       - name: Push
         run: |-
-          Rscript -e "system('git push origin master')"
-
-
+          Rscript -e "system('git checkout -b new_image')"
+          Rscript -e "system('git push -u origin new_image')"
