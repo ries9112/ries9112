@@ -56,7 +56,7 @@ anim <- animate(ggplot(data = messari,
                 xlab('Date Time Collected (Colorado - MST)') +
                 ylab('Price USD ($)') +
                 transition_states(Name) +
-                ggtitle(paste('{closest_state} Price ($) Past 2 Days (Through ',max(messari$DateTimeColoradoMST), ' - MST')) +
+                ggtitle('{closest_state} Price ($) Past 2 Days') +
                 view_follow(),fps=1)
 
 # Delete animation before making new one
