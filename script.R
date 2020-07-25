@@ -13,7 +13,7 @@ messari <- get_crypto_data()
 messari <- subset(messari, Rank < 20)
 
 # Remove USD coins:
-messari <- subset(messari, Name != c(messari$Name[!grepl("USD", messari$Name)]))
+#messari <- subset(messari, Name != c(messari$Name[!grepl("USD", messari$Name)]))
 
 # Convert date/time
 messari$DateTimeColoradoMST <- as.POSIXct(messari$DateTimeColoradoMST, format="%Y-%m-%d %H:%M:%S")
