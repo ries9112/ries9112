@@ -24,7 +24,5 @@ jobs:
           git config --local user.email "ries9112@colorado.edu"
           git config --local user.name "ries9112"
           git add .
-          git pull --rebase
-          git push
           git commit -m "Update GitHub readme" -a
           git push https://ries9112:${{secrets.GITHUB_TOKEN}}@github.com/ries9112/ries9112.git HEAD:master
