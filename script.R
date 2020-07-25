@@ -60,7 +60,7 @@ anim <- animate(ggplot(data = messari,
                 view_follow(),fps=1)
 
 # Delete animation before making new one
-#file_delete('crypto_plot_2.gif')
+file_delete('crypto_plot_2.gif')
 
 # Save gif
 image_write(anim, path='crypto_plot_2.gif')
