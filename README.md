@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-### My name is Riccardo but I go by Ricky. I love R and cryptocurrencies. 
+### My name is Riccardo but I go by Ricky. I love R, automation, and cryptocurrencies. 
 ### Below is an animated GIF showing cryptocurrency prices for the past 31 days, powered by GitHub Actions and R, which updates once every hour (check the timestamp on the latest data in the subtitle of the chart below):
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot.gif" width="450">   
