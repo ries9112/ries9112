@@ -9,7 +9,7 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 Here are the same charts, but only showing the last 2 days worth of data:
 
-<img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="550">   
+<img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
 
 ###### [data source](https://messari.io/)
 
