@@ -57,7 +57,7 @@ anim <- animate(ggplot(data = messari,
                 ylab('Price USD ($)') +
                 transition_states(Name) +
                 ggtitle('{closest_state} Price ($) Past 2 Days') +
-                view_follow(),fps=2)
+                view_follow(),fps=1)
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
