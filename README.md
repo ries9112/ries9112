@@ -7,7 +7,7 @@
 
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
-Here are the same charts, but only showing the last 2 days worth of data:
+Now only showing the last 2 days:
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
 
