@@ -48,7 +48,7 @@ messari <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*2)
 # Make gganimated plot of ETH data:
 anim <- animate(ggplot(data = messari,
                aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
-                geom_line() +
+                geom_point() +
                 labs(subtitle=paste('Latest data collected on:', max(messari$DateTimeColoradoMST), ' - MST'),
                      caption='Data source: messari.io') + 
                 stat_smooth() + 
