@@ -12,7 +12,7 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 <details>
   <summary> <b> Click me to view the rest of this document </b>
-<p align="center">  
+<p style="font-size:30px">
 </p> </summary>  
 
 ### Now only showing the last 2 days:
