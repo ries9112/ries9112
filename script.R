@@ -71,7 +71,7 @@ messari_7 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*7)
 
 # Make gganimated plot of reported 24h volume:
 anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = reported24h_volume, group = Name)) + 
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = Reported24hVolume, group = Name)) + 
                 geom_point() +
                 labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
                      caption='Data source: messari.io') + 
@@ -92,7 +92,7 @@ image_write(anim, path='crypto_volume.gif')
 
 # Make gganimated plot of GitHub Stars:
 anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = git_stars, group = Name)) + 
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = Git_Stars, group = Name)) + 
                 geom_point() +
                 labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
                      caption='Data source: messari.io') + 
@@ -112,7 +112,7 @@ image_write(anim, path='crypto_git_stars.gif')
 
 # Make gganimated plot of active addresses:
 anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = active_addresses, group = Name)) + 
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = ActiveAddresses, group = Name)) + 
                 geom_point() +
                 labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
                      caption='Data source: messari.io') + 
