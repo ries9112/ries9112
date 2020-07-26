@@ -43,4 +43,14 @@ Be sure to create a new repository named the same as your GitHub username with a
 <p align="center">  
 </p> </summary>  
   
-  ADD MORE CHARTS/IMAGES HERE!
+### Last 7 Days - Reported 24 Hour Volume
+<img src="https://github.com/ries9112/ries9112/blob/master/crypto_volume.gif" width="450">
+
+### Last 7 Days - GitHub Stars
+<img src="https://github.com/ries9112/ries9112/blob/master/crypto_git_stars.gif" width="450">
+
+### Last 7 Days - Active Addresses
+<img src="https://github.com/ries9112/ries9112/blob/master/crypto_addresses.gif" width="450">
+
+
+
