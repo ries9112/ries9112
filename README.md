@@ -8,9 +8,9 @@
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot.gif" width="450">   
 
-###### [data source: messari.io](https://messari.io/)
-
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
+
+###### [data source: messari.io](https://messari.io/)
 
 ## Press on the button below to show the rest of this document:
 <details>
