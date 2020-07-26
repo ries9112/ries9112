@@ -31,7 +31,7 @@ Be sure to create a new repository named the same as your GitHub username with a
 ![Ricky Github Stats](https://github-readme-stats.vercel.app/api?username=ries9112&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
 <details>
-  <summary> <b> Click Here to see more cryptocurrency charts (never outdated by more than 2 hours): </b>
+  <summary> <b> Click here to see more cryptocurrency charts (never outdated by more than 2 hours): </b>
 <p align="center">  
 </p> </summary>  
   
