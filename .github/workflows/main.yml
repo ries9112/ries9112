@@ -17,13 +17,13 @@ jobs:
           Rscript -e "install.packages('remotes')"
           Rscript -e "remotes::install_github('ries9112/PredictCrypto')"
           Rscript -e "install.packages(c('pins', 'ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr'))"
-      - name: Cache R packages
-        if: runner.os != 'Windows'
-        uses: actions/cache@v1
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+      #- name: Cache R packages
+      #  if: runner.os != 'Windows'
+      #  uses: actions/cache@v1
+      #  with:
+      #    path: ${{ env.R_LIBS_USER }}
+      #    key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+      #    restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"
