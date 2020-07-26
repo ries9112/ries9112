@@ -38,21 +38,22 @@ Be sure to create a new repository named the same as your GitHub username with a
 
 ![Ricky Github Stats](https://github-readme-stats.vercel.app/api?username=ries9112&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
+<!--### Click below for more cryptocurrency charts, which refresh hourly:   -->
+<!--<details>   -->
+<!--  <summary> <b> Click here for more plots: </b>   -->
+<!--<p align="center">    -->
+<!--</p> </summary>    -->
 
-### Click below for more cryptocurrency charts, which refresh hourly:
-<details>
-  <summary> <b> Click here for more plots: </b>
-<p align="center">  
-</p> </summary>  
-  
-### Last 7 Days - Reported 24 Hour Volume
-<img src="https://github.com/ries9112/ries9112/blob/master/crypto_volume.gif" width="450">
 
-### Last 7 Days - GitHub Stars
-<img src="https://github.com/ries9112/ries9112/blob/master/crypto_git_stars.gif" width="450">
+<!--### Last 7 Days - Reported 24 Hour Volume  -->
+<!--<img src="https://github.com/ries9112/ries9112/blob/master/crypto_volume.gif" width="450">  -->
 
-### Last 7 Days - Active Addresses
-<img src="https://github.com/ries9112/ries9112/blob/master/crypto_addresses.gif" width="450">
+<!--### Last 7 Days - GitHub Stars  -->
+<!--<img src="https://github.com/ries9112/ries9112/blob/master/crypto_git_stars.gif" width="450">  -->
 
-###### Data plotted above should never be outdated by more than 2 hours
+<!--### Last 7 Days - Active Addresses  -->
+<!--<img src="https://github.com/ries9112/ries9112/blob/master/crypto_addresses.gif" width="450">  -->
+
+<!--###### Data plotted above should never be outdated by more than 2 hours  -->
+
 
