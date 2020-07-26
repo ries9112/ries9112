@@ -34,7 +34,7 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 ###### [R Adaptation by Zhi Yang](https://twitter.com/zhiiiyang/status/1281996703839608833)
 
-Be sure to create a new repository named the same as your GitHub username with a readme.md in order to get this to appear on your profile, forking this or a different repository will not work.
+Be sure to create a new repository named the same as your GitHub username with a readme.md in order to get this to appear on your profile, forking this or a different repository will not work. [Click here for some great templates](https://github.com/kautukkundan/Awesome-Profile-README-templates).
 
 ![Ricky Github Stats](https://github-readme-stats.vercel.app/api?username=ries9112&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
