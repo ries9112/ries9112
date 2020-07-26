@@ -10,6 +10,11 @@
 
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
+<details>
+  <summary> <b> Click me to view the rest of this document </b>
+<p align="center">  
+</p> </summary>  
+
 ### Now only showing the last 2 days:
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
