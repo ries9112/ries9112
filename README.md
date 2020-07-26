@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-### My name is Riccardo but I go by Ricky. I love <img src="https://camo.githubusercontent.com/..." data-canonical-src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" width="10" height="20" />, data automation, and cryptocurrencies. 
+### My name is Riccardo but I go by Ricky. I love <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" data-canonical-src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" width="25" height="25" />, data automation, and cryptocurrencies. 
 
 [![LinkedIn URL](https://img.shields.io/twitter/url?color=%230072b1&label=connect&logo=linkedin&logoColor=%230072b1&style=flat-square&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2esclaponriccardo%2F)](https://www.linkedin.com/in/esclaponriccardo/)
 
