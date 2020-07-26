@@ -21,7 +21,7 @@ messari$DateTimeColoradoMST <- as.POSIXct(messari$DateTimeColoradoMST, format="%
 # Filter data to last 31 days
 messari <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*31)
 
-# Make gganimated plot of ETH data:
+# Make gganimated plot:
 anim <- animate(ggplot(data = messari,
                aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
                 geom_line() +
@@ -43,13 +43,13 @@ image_write(anim, path='crypto_plot.gif')
 
 # Second gif for last 2 days of data
 # Filter to last 2 days
-messari <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*2)
+messari_2 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*2)
 
-# Make gganimated plot of ETH data:
-anim <- animate(ggplot(data = messari,
+# Make gganimated plot:
+anim <- animate(ggplot(data = messari_2,
                aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
                 geom_point() +
-                labs(subtitle=paste('Latest data collected on:', max(messari$DateTimeColoradoMST), ' - MST'),
+                labs(subtitle=paste('Latest data collected on:', max(messari_2$DateTimeColoradoMST), ' - MST'),
                      caption='Data source: messari.io') + 
                 stat_smooth() + 
                 theme_economist() +
@@ -64,3 +64,68 @@ file_delete('crypto_plot_2.gif')
 
 # Save gif
 image_write(anim, path='crypto_plot_2.gif')
+
+# Make more charts
+# Filter to last 7 days
+messari_7 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*7)
+
+# Make gganimated plot of reported 24h volume:
+anim <- animate(ggplot(data = messari_7,
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = reported24h_volume, group = Name)) + 
+                geom_point() +
+                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+                     caption='Data source: messari.io') + 
+                stat_smooth() + 
+                theme_economist() +
+                xlab('Date Time Collected (Colorado - MST)') +
+                ylab('Reported Volume (24 hour period)') +
+                transition_states(Name) +
+                ggtitle('{closest_state} Reported Volume ($) Past 7 Days') +
+                view_follow(),fps=1)
+
+# Delete animation before making new one
+#file_delete('crypto_volume.gif')
+
+# Save gif
+image_write(anim, path='crypto_volume.gif')
+
+
+# Make gganimated plot of GitHub Stars:
+anim <- animate(ggplot(data = messari_7,
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = git_stars, group = Name)) + 
+                geom_point() +
+                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+                     caption='Data source: messari.io') + 
+                stat_smooth() + 
+                theme_economist() +
+                xlab('Date Time Collected (Colorado - MST)') +
+                ylab('GitHub Stars') +
+                transition_states(Name) +
+                ggtitle('{closest_state} - GitHub Stars - Past 7 Days') +
+                view_follow(),fps=1)
+
+# Delete animation before making new one
+#file_delete('crypto_git_stars.gif')
+
+# Save gif
+image_write(anim, path='crypto_git_stars.gif')
+
+# Make gganimated plot of active addresses:
+anim <- animate(ggplot(data = messari_7,
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = active_addresses, group = Name)) + 
+                geom_point() +
+                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+                     caption='Data source: messari.io') + 
+                stat_smooth() + 
+                theme_economist() +
+                xlab('Date Time Collected (Colorado - MST)') +
+                ylab('Active Addresses') +
+                transition_states(Name) +
+                ggtitle('{closest_state} - Number of Active Addresses - Past 7 Days') +
+                view_follow(),fps=1)
+
+# Delete animation before making new one
+#file_delete('crypto_addresses.gif')
+
+# Save gif
+image_write(anim, path='crypto_addresses.gif')
