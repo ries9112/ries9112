@@ -12,8 +12,9 @@
 
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
+### Press on the button below to show the rest of this document:
 <details>
-  <summary> <b> Click me to view the rest of this document </b>
+  <summary> <b> Show the rest of the page </b>
 <p style="font-size:30px">
 </p> </summary>  
 
