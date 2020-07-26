@@ -84,7 +84,7 @@ anim <- animate(ggplot(data = messari_7,
                 view_follow(),fps=1)
 
 # Delete animation before making new one
-#file_delete('crypto_volume.gif')
+file_delete('crypto_volume.gif')
 
 # Save gif
 image_write(anim, path='crypto_volume.gif')
@@ -105,7 +105,7 @@ anim <- animate(ggplot(data = messari_7,
                 view_follow(),fps=1)
 
 # Delete animation before making new one
-#file_delete('crypto_git_stars.gif')
+file_delete('crypto_git_stars.gif')
 
 # Save gif
 image_write(anim, path='crypto_git_stars.gif')
@@ -125,7 +125,7 @@ anim <- animate(ggplot(data = messari_7,
                 view_follow(),fps=1)
 
 # Delete animation before making new one
-#file_delete('crypto_addresses.gif')
+file_delete('crypto_addresses.gif')
 
 # Save gif
 image_write(anim, path='crypto_addresses.gif')
