@@ -2,7 +2,7 @@
 
 ### My name is Riccardo but I go by Ricky. I love <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" data-canonical-src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" width="30" height="28" /> and data automation.
 
-[![LinkedIn URL](https://img.shields.io/twitter/url?color=%230072b1&label=connect&logo=linkedin&logoColor=%230072b1&style=flat-square&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2esclaponriccardo%2F)](https://www.linkedin.com/in/esclaponriccardo/)
+[![Linkedin](https://img.shields.io/badge/-Riccardo_Esclapon-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/esclaponriccardo/)](https://www.linkedin.com/in/esclaponriccardo/)
 
 ### Below is an animated GIF showing cryptocurrency prices for the past 31 days, powered by GitHub Actions and R, which updates once every hour (check the timestamp on the latest data in the subtitle of the chart below):
 
