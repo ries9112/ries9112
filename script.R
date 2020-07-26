@@ -67,65 +67,65 @@ image_write(anim, path='crypto_plot_2.gif')
 
 # Make more charts
 # Filter to last 7 days
-messari_7 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*7)
+#messari_7 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*7)
 
 # Make gganimated plot of reported 24h volume:
-anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = Reported24hVolume, group = Name)) + 
-                geom_point() +
-                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
-                     caption='Data source: messari.io') + 
-                stat_smooth() + 
-                theme_economist() +
-                xlab('Date Time Collected (Colorado - MST)') +
-                ylab('Reported Volume (24 hour period)') +
-                transition_states(Name) +
-                ggtitle('{closest_state} Reported Volume ($) Past 7 Days') +
-                view_follow(),fps=1)
+#anim <- animate(ggplot(data = messari_7,
+#               aes(x = as.POSIXct(DateTimeColoradoMST), y = Reported24hVolume, group = Name)) + 
+#                geom_point() +
+#                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+#                     caption='Data source: messari.io') + 
+#                stat_smooth() + 
+#                theme_economist() +
+#                xlab('Date Time Collected (Colorado - MST)') +
+#                ylab('Reported Volume (24 hour period)') +
+#                transition_states(Name) +
+#                ggtitle('{closest_state} Reported Volume ($) Past 7 Days') +
+#                view_follow(),fps=1)
 
 # Delete animation before making new one
-file_delete('crypto_volume.gif')
+#file_delete('crypto_volume.gif')
 
 # Save gif
-image_write(anim, path='crypto_volume.gif')
+#image_write(anim, path='crypto_volume.gif')
 
 
 # Make gganimated plot of GitHub Stars:
-anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = Git_Stars, group = Name)) + 
-                geom_point() +
-                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
-                     caption='Data source: messari.io') + 
-                stat_smooth() + 
-                theme_economist() +
-                xlab('Date Time Collected (Colorado - MST)') +
-                ylab('GitHub Stars') +
-                transition_states(Name) +
-                ggtitle('{closest_state} - GitHub Stars - Past 7 Days') +
-                view_follow(),fps=1)
+#anim <- animate(ggplot(data = messari_7,
+#               aes(x = as.POSIXct(DateTimeColoradoMST), y = Git_Stars, group = Name)) + 
+#                geom_point() +
+#                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+#                     caption='Data source: messari.io') + 
+#                stat_smooth() + 
+#                theme_economist() +
+#                xlab('Date Time Collected (Colorado - MST)') +
+#                ylab('GitHub Stars') +
+#                transition_states(Name) +
+#                ggtitle('{closest_state} - GitHub Stars - Past 7 Days') +
+#                view_follow(),fps=1)
 
 # Delete animation before making new one
-file_delete('crypto_git_stars.gif')
+#file_delete('crypto_git_stars.gif')
 
 # Save gif
-image_write(anim, path='crypto_git_stars.gif')
+#image_write(anim, path='crypto_git_stars.gif')
 
 # Make gganimated plot of active addresses:
-anim <- animate(ggplot(data = messari_7,
-               aes(x = as.POSIXct(DateTimeColoradoMST), y = ActiveAddresses, group = Name)) + 
-                geom_point() +
-                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
-                     caption='Data source: messari.io') + 
-                stat_smooth() + 
-                theme_economist() +
-                xlab('Date Time Collected (Colorado - MST)') +
-                ylab('Active Addresses') +
-                transition_states(Name) +
-                ggtitle('{closest_state} - Number of Active Addresses - Past 7 Days') +
-                view_follow(),fps=1)
+#anim <- animate(ggplot(data = messari_7,
+#               aes(x = as.POSIXct(DateTimeColoradoMST), y = ActiveAddresses, group = Name)) + 
+#                geom_point() +
+#                labs(subtitle=paste('Latest data collected on:', max(messari_7$DateTimeColoradoMST), ' - MST'),
+#                     caption='Data source: messari.io') + 
+#                stat_smooth() + 
+#                theme_economist() +
+#                xlab('Date Time Collected (Colorado - MST)') +
+#                ylab('Active Addresses') +
+#                transition_states(Name) +
+#                ggtitle('{closest_state} - Number of Active Addresses - Past 7 Days') +
+#                view_follow(),fps=1)
 
 # Delete animation before making new one
-file_delete('crypto_addresses.gif')
+#file_delete('crypto_addresses.gif')
 
 # Save gif
-image_write(anim, path='crypto_addresses.gif')
+#image_write(anim, path='crypto_addresses.gif')
