@@ -8,6 +8,8 @@
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot.gif" width="450">   
 
+###### [data source: messari.io](https://messari.io/)
+
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
 <details>
@@ -19,7 +21,7 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
 
-###### [data source: messari.io](https://messari.io/)
+
 
 ## [Click here to access interactive tutorials using this same data, which refreshes hourly](https://predictcrypto.org/tutorials)
 
