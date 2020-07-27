@@ -48,16 +48,16 @@ messari_2 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*2)
 # Make gganimated plot:
 anim <- animate(ggplot(data = messari_2,
                aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
-                geom_point() +
-                labs(subtitle=paste('Latest data collected on:', max(messari_2$DateTimeColoradoMST), ' - MST'),
-                     caption='Data source: messari.io') + 
-                stat_smooth() + 
-                theme_economist() +
-                xlab('Date Time Collected (Colorado - MST)') +
-                ylab('Price USD ($)') +
-                transition_states(Name) +
-                ggtitle('{closest_state} Price ($) Past 2 Days') +
-                view_follow(),fps=1)
+               geom_line() +
+               geom_point() +
+               labs(subtitle=paste('Latest data collected on:', max(messari_2$DateTimeColoradoMST), ' - MST'),
+                    caption='Data source: messari.io') + 
+               theme_economist() +
+               xlab('Date Time Collected (Colorado - MST)') +
+               ylab('Price USD ($)') +
+               transition_states(Name) +
+               ggtitle('{closest_state} Price ($) Past 31 Days') +
+               view_follow(),fps=1)
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
