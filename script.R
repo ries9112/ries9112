@@ -5,6 +5,7 @@ library(ggthemes)
 library(fs)
 library(gganimate)
 library(magick)
+library(dplyr)
 
 # Pull crypto_data data:
 crypto_data <- get_prices_by_exchange()
@@ -14,6 +15,12 @@ crypto_data <- get_prices_by_exchange()
 
 # Remove USD coins:
 #crypto_data <- subset(crypto_data, Name != c(crypto_data$Name[!grepl("USD", crypto_data$Name)]))
+
+# Only get Binance cryptos
+crypto_data <- subset(crypto_data, Exchange == 'Binance')
+
+# Arrange data so that Bitcoin is first
+crypto_data <- arrange(crypto_data, -highest_bid_1_price_usd)
 
 # Convert date/time
 crypto_data$date_time_utc <- as.POSIXct(crypto_data$date_time_utc, format="%Y-%m-%d %H:%M:%S")
@@ -44,7 +51,7 @@ image_write(anim, path='crypto_plot.gif')
 
 # Second gif for last 2 days of data
 # Filter to last 2 days
-crypto_data_2 <- subset(crypto_data, date_time_utc > Sys.time()-60*60*24*31) # not sure why filter not working as expected anymore
+crypto_data_2 <- subset(crypto_data, date_time_utc > Sys.time()-60*60*24*31*4) # not sure why filter not working as expected anymore
 
 # Make gganimated plot:
 anim <- animate(ggplot(data = crypto_data_2,
