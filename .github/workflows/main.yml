@@ -1,22 +1,29 @@
-name: Show latest crypto data
+name: Hourly Update Chart GIF
 
 on:
   push:
     branches: [master]
   schedule:
-    - cron:  '40 * * * *'
+    - cron:  '30 * * * *'
       
 jobs:
   build:
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages('remotes')"
           Rscript -e "remotes::install_github('ries9112/PredictCrypto')"
           Rscript -e "install.packages(c('pins', 'ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr'))"
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       - name: Run script
         run: |-
           Rscript -e "source('script.R')"

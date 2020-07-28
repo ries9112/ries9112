@@ -23,6 +23,7 @@ messari <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*31)
 
 # Make gganimated plot:
 anim <- animate(ggplot(data = messari,
+<<<<<<< HEAD
                        aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
                   geom_line() +
                   labs(subtitle=paste('Latest data collected on:', max(messari$DateTimeColoradoMST), ' - MST'),
@@ -34,6 +35,19 @@ anim <- animate(ggplot(data = messari,
                   transition_states(Name) +
                   ggtitle('{closest_state} Price ($) Past 31 Days') +
                   view_follow(),fps=1)
+=======
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
+                geom_line() +
+                labs(subtitle=paste('Latest data collected on:', max(messari$DateTimeColoradoMST), ' - MST'),
+                     caption='Data source: messari.io') + 
+                stat_smooth() + 
+                theme_economist() +
+                xlab('Date Time Collected (Colorado - MST)') +
+                ylab('Price USD ($)') +
+                transition_states(Name) +
+                ggtitle('{closest_state} Price ($) Past 31 Days') +
+                view_follow(),fps=1)
+>>>>>>> 4d1f78cae1bb65680f55feb1cee2d9e61442172d
 
 # Delete animation before making new one
 file_delete('crypto_plot.gif')
@@ -47,6 +61,7 @@ messari_2 <- subset(messari, DateTimeColoradoMST > Sys.time()-60*60*24*2)
 
 # Make gganimated plot:
 anim <- animate(ggplot(data = messari_2,
+<<<<<<< HEAD
                        aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
                   geom_line() +
                   geom_point() +
@@ -58,6 +73,19 @@ anim <- animate(ggplot(data = messari_2,
                   transition_states(Name) +
                   ggtitle('{closest_state} Price ($) Past 31 Days') +
                   view_follow(),fps=1)
+=======
+               aes(x = as.POSIXct(DateTimeColoradoMST), y = PriceUSD, group = Name)) + 
+               geom_line() +
+               geom_point() +
+               labs(subtitle=paste('Latest data collected on:', max(messari_2$DateTimeColoradoMST), ' - MST'),
+                    caption='Data source: messari.io') + 
+               theme_economist() +
+               xlab('Date Time Collected (Colorado - MST)') +
+               ylab('Price USD ($)') +
+               transition_states(Name) +
+               ggtitle('{closest_state} Price ($) Past 31 Days') +
+               view_follow(),fps=1)
+>>>>>>> 4d1f78cae1bb65680f55feb1cee2d9e61442172d
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
@@ -128,4 +156,8 @@ image_write(anim, path='crypto_plot_2.gif')
 #file_delete('crypto_addresses.gif')
 
 # Save gif
+<<<<<<< HEAD
 #image_write(anim, path='crypto_addresses.gif')
+=======
+#image_write(anim, path='crypto_addresses.gif')
+>>>>>>> 4d1f78cae1bb65680f55feb1cee2d9e61442172d
