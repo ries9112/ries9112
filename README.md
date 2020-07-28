@@ -10,7 +10,7 @@
 
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
-###### [data source: messari.io](https://messari.io/)
+###### [data source: shrimpy.io](https://shrimpy.io/exchange)
 
 ## Press on the button below to show the rest of this document:
 <details>
