@@ -47,11 +47,11 @@ hitBTC <- resymbol(hitBTC, PriceUSD = 'bid_1_price'
 anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
                 geom_line() +
-                labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - MST'),
+                labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
                      caption='Data source: hitBTC.io') + 
                 stat_smooth() + 
                 theme_economist() +
-                xlab('Date Time Collected (Colorado - MST)') +
+                xlab('Date Time Collected (UTC)') +
                 ylab('Price USD ($)') +
                 transition_states(symbol) +
                 ggtitle('{closest_state} Price ($) Past 31 Days') +
@@ -72,10 +72,10 @@ anim <- animate(ggplot(data = hitBTC_2,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
                geom_line() +
                geom_point() +
-               labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - MST'),
+               labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - UTC'),
                     caption='Data source: hitBTC.io') + 
                theme_economist() +
-               xlab('Date Time Collected (Colorado - MST)') +
+               xlab('Date Time Collected (UTC)') +
                ylab('Price USD ($)') +
                transition_states(symbol) +
                ggtitle('{closest_state} Price ($) Past 2 Days') +
@@ -95,11 +95,11 @@ image_write(anim, path='crypto_plot_2.gif')
 #anim <- animate(ggplot(data = hitBTC_7,
 #               aes(x = as.POSIXct(date_time_utc), y = Reported24hVolume, group = symbol)) + 
 #                geom_point() +
-#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - MST'),
+#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
 #                     caption='Data source: hitBTC.io') + 
 #                stat_smooth() + 
 #                theme_economist() +
-#                xlab('Date Time Collected (Colorado - MST)') +
+#                xlab('Date Time Collected (UTC)') +
 #                ylab('Reported Volume (24 hour period)') +
 #                transition_states(symbol) +
 #                ggtitle('{closest_state} Reported Volume ($) Past 7 Days') +
@@ -116,11 +116,11 @@ image_write(anim, path='crypto_plot_2.gif')
 #anim <- animate(ggplot(data = hitBTC_7,
 #               aes(x = as.POSIXct(date_time_utc), y = Git_Stars, group = symbol)) + 
 #                geom_point() +
-#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - MST'),
+#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
 #                     caption='Data source: hitBTC.io') + 
 #                stat_smooth() + 
 #                theme_economist() +
-#                xlab('Date Time Collected (Colorado - MST)') +
+#                xlab('Date Time Collected (UTC)') +
 #                ylab('GitHub Stars') +
 #                transition_states(symbol) +
 #                ggtitle('{closest_state} - GitHub Stars - Past 7 Days') +
@@ -136,11 +136,11 @@ image_write(anim, path='crypto_plot_2.gif')
 #anim <- animate(ggplot(data = hitBTC_7,
 #               aes(x = as.POSIXct(date_time_utc), y = ActiveAddresses, group = symbol)) + 
 #                geom_point() +
-#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - MST'),
+#                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
 #                     caption='Data source: hitBTC.io') + 
 #                stat_smooth() + 
 #                theme_economist() +
-#                xlab('Date Time Collected (Colorado - MST)') +
+#                xlab('Date Time Collected (UTC)') +
 #                ylab('Active Addresses') +
 #                transition_states(symbol) +
 #                ggtitle('{closest_state} - Number of Active Addresses - Past 7 Days') +
