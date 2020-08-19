@@ -9,14 +9,13 @@ library(magick)
 library(dplyr)
 
 ############# SQL CONNECTION ###############
-Sys.setenv(user=db_user, pswd=db_pswd,ipAddress=db_ip)
 getSqlConnection <- function(){
   con <-
     dbConnect(
       RMariaDB::MariaDB(),
-      username = Sys.getenv('user'),
-      password = Sys.getenv('pswd'),
-      host = Sys.getenv('ipAddress'),
+      username = '${{secrets.db_user}}',
+      password = '${{secrets.db_pswd}}',
+      host = '${{secrets.db_ip}}', 
       dbname = 'Octoparse'
     )
   return(con)
