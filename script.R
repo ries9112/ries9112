@@ -48,7 +48,7 @@ anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
                 geom_line() +
                 labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
-                     caption='Data source: hitBTC.io') + 
+                     caption='Data source: HitBTC.com') + 
                 stat_smooth() + 
                 theme_economist() +
                 xlab('Date Time Collected (UTC)') +
@@ -73,7 +73,7 @@ anim <- animate(ggplot(data = hitBTC_2,
                geom_line() +
                geom_point() +
                labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - UTC'),
-                    caption='Data source: hitBTC.io') + 
+                    caption='Data source: HitBTC.com') + 
                theme_economist() +
                xlab('Date Time Collected (UTC)') +
                ylab('Price USD ($)') +
@@ -96,7 +96,7 @@ image_write(anim, path='crypto_plot_2.gif')
 #               aes(x = as.POSIXct(date_time_utc), y = Reported24hVolume, group = symbol)) + 
 #                geom_point() +
 #                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
-#                     caption='Data source: hitBTC.io') + 
+#                     caption='Data source: HitBTC.com') + 
 #                stat_smooth() + 
 #                theme_economist() +
 #                xlab('Date Time Collected (UTC)') +
@@ -117,7 +117,7 @@ image_write(anim, path='crypto_plot_2.gif')
 #               aes(x = as.POSIXct(date_time_utc), y = Git_Stars, group = symbol)) + 
 #                geom_point() +
 #                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
-#                     caption='Data source: hitBTC.io') + 
+#                     caption='Data source: HitBTC.com') + 
 #                stat_smooth() + 
 #                theme_economist() +
 #                xlab('Date Time Collected (UTC)') +
@@ -137,7 +137,7 @@ image_write(anim, path='crypto_plot_2.gif')
 #               aes(x = as.POSIXct(date_time_utc), y = ActiveAddresses, group = symbol)) + 
 #                geom_point() +
 #                labs(subtitle=paste('Latest data collected on:', max(hitBTC_7$date_time_utc), ' - UTC'),
-#                     caption='Data source: hitBTC.io') + 
+#                     caption='Data source: HitBTC.com') + 
 #                stat_smooth() + 
 #                theme_economist() +
 #                xlab('Date Time Collected (UTC)') +
