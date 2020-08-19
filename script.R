@@ -15,7 +15,7 @@ getSqlConnection <- function(){
       RMariaDB::MariaDB(),
       username = '${{secrets.db_user}}',
       password = '${{secrets.db_pswd}}',
-      host = '${{secrets.db_ip}}', 
+      host = 35.188.12.15, 
       dbname = 'Octoparse'
     )
   return(con)
