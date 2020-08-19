@@ -22,7 +22,7 @@ getSqlConnection <- function(){
 }
 database_connection <- getSqlConnection()
 tables_list <- dbListTables(database_connection)
-query <- 'SELECT * FROM HitBTC_orderbook_USD WHERE (symbol = 'BTC' OR symbol = 'ETH' OR symbol = 'BTC' OR symbol = 'XRP' OR symbol = 'LINK' OR symbol = 'BCH' OR symbol = 'LTC' OR symbol = 'BSV' OR symbol = 'ADA' OR symbol = 'BNB' OR symbol = 'EOS' OR symbol = 'CRO' OR symbol = 'XTZ' OR symbol = 'XLM' OR symbol = 'TRX' OR symbol = 'XMR' OR symbol = 'LEO' OR symbol = 'ATOM' OR symbol = 'NEO' OR symbol = 'MIOTA') AND quote_currency = 'USD' ORDER BY Date DESC LIMIT 100000'
+query <- "SELECT * FROM HitBTC_orderbook_USD WHERE (symbol = 'BTC' OR symbol = 'ETH' OR symbol = 'BTC' OR symbol = 'XRP' OR symbol = 'LINK' OR symbol = 'BCH' OR symbol = 'LTC' OR symbol = 'BSV' OR symbol = 'ADA' OR symbol = 'BNB' OR symbol = 'EOS' OR symbol = 'CRO' OR symbol = 'XTZ' OR symbol = 'XLM' OR symbol = 'TRX' OR symbol = 'XMR' OR symbol = 'LEO' OR symbol = 'ATOM' OR symbol = 'NEO' OR symbol = 'MIOTA') AND quote_currency = 'USD' ORDER BY Date DESC LIMIT 100000"
 hitBTC <- dbFetch(dbSendQuery(database_connection, query))
 
 # Filter data to top 20 ranked cryptos
