@@ -15,9 +15,11 @@ jobs:
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages(c('DBI','RMariaDB','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr'))"
-          Rscript -e "db_user <- ${{secrets.db_user}}"
-          Rscript -e "db_pswd <- ${{secrets.db_pswd}}"
-          Rscript -e "db_ip <- ${{secrets.db_ip}}"
+      - name: Set DB credentials
+        run: |
+          db_user <- "${{secrets.db_user}}"
+          db_ip <- "${{secrets.db_ip}}"       
+          db_pswd <- "${{secrets.db_pswd}}"
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
