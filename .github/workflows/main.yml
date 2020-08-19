@@ -15,12 +15,6 @@ jobs:
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages(c('DBI','RMariaDB','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr'))"
-      - name: Set DB credentials
-        run: |
-          db_user <- "${{secrets.db_user}}"
-          db_ip <- "${{secrets.db_ip}}"       
-          db_pswd <- "${{secrets.db_pswd}}"
-        shell: Rscript {0}
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
@@ -30,6 +24,9 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       - name: Run script
         run: |-
+          Rscript -e "db_user <- '${{secrets.db_user}}'"
+          Rscript -e "db_ip <- '${{secrets.db_ip}}'"
+          Rscript -e "db_pswd <- '${{secrets.db_pswd}}'"
           Rscript -e "source('script.R')"
       - name: Commit and push files
         run: |
