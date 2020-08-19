@@ -6,6 +6,7 @@ library(ggthemes)
 library(fs)
 library(gganimate)
 library(magick)
+library(dplyr)
 
 ############# SQL CONNECTION ###############
 Sys.setenv(user=db_user, pswd=db_pswd,ipAddress=db_ip)
@@ -29,7 +30,7 @@ hitBTC <- dbFetch(dbSendQuery(database_connection, query))
 #hitBTC <- subset(hitBTC, Rank < 20)
 
 # Unique data
-hitBTC <- distinct(hitBTC, pkey)
+hitBTC <- distinct(hitBTC, pkey, .keep_all = T)
 
 # Remove USD coins:
 #hitBTC <- subset(hitBTC, Name != c(hitBTC$Name[!grepl("USD", hitBTC$Name)]))
@@ -40,8 +41,8 @@ hitBTC$date_time_utc <- as.POSIXct(hitBTC$date_time_utc, format="%Y-%m-%d %H:%M:
 # Filter data to last 31 days
 hitBTC <- subset(hitBTC, date_time_utc > Sys.time()-60*60*24*31)
 
-# Resymbol price field
-hitBTC <- resymbol(hitBTC, PriceUSD = 'bid_1_price'
+# Rename price field
+hitBTC <- rename(hitBTC, PriceUSD = 'bid_1_price')
 
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC,
