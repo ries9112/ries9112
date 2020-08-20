@@ -14,7 +14,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Package Dependencies
         run: |-
-          Rscript -e "install.packages(c('DBI','RMariaDB','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr'))"
+          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr'))"
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
@@ -24,9 +24,6 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       - name: Refresh charts
         run: |
-          db_user <- "${{secrets.DB_USER}}"
-          db_ip <- "${{secrets.DB_IP}}"
-          db_pswd <- "${{secrets.DB_PSWD}}"
           source('script.R')
         shell: Rscript {0}
       - name: Commit and push files
