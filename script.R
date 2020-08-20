@@ -1,5 +1,4 @@
-library(DBI)
-library(RMariaDB)
+library(pins)
 library(ggplot2)
 library(anytime)
 library(ggthemes)
@@ -8,22 +7,9 @@ library(gganimate)
 library(magick)
 library(dplyr)
 
-############# SQL CONNECTION ###############
-getSqlConnection <- function(){
-  con <-
-    dbConnect(
-      RMariaDB::MariaDB(),
-      username = db_user,
-      password = db_pswd,
-      host = db_ip, 
-      dbname = 'Octoparse'
-    )
-  return(con)
-}
-database_connection <- getSqlConnection()
-tables_list <- dbListTables(database_connection)
-query <- "SELECT * FROM HitBTC_orderbook_USD WHERE (symbol = 'BTC' OR symbol = 'ETH' OR symbol = 'BTC' OR symbol = 'XRP' OR symbol = 'LINK' OR symbol = 'BCH' OR symbol = 'LTC' OR symbol = 'BSV' OR symbol = 'ADA' OR symbol = 'BNB' OR symbol = 'EOS' OR symbol = 'CRO' OR symbol = 'XTZ' OR symbol = 'XLM' OR symbol = 'TRX' OR symbol = 'XMR' OR symbol = 'LEO' OR symbol = 'ATOM' OR symbol = 'NEO' OR symbol = 'MIOTA') AND quote_currency = 'USD' ORDER BY Date DESC LIMIT 100000"
-hitBTC <- dbFetch(dbSendQuery(database_connection, query))
+board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","hitBTC_orderbooks_github")
+
+hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github"))
 
 # Filter data to top 20 ranked cryptos
 #hitBTC <- subset(hitBTC, Rank < 20)
