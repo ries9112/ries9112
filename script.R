@@ -11,14 +11,8 @@ board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","h
 
 hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github")
 
-# Filter data to top 20 ranked cryptos
-#hitBTC <- subset(hitBTC, Rank < 20)
-
 # Unique data
 hitBTC <- distinct(hitBTC, pkey, .keep_all = T)
-
-# Remove USD coins:
-#hitBTC <- subset(hitBTC, Name != c(hitBTC$Name[!grepl("USD", hitBTC$Name)]))
 
 # Convert date/time
 hitBTC$date_time_utc <- as.POSIXct(hitBTC$date_time_utc, format="%Y-%m-%d %H:%M:%S")
@@ -29,10 +23,13 @@ hitBTC <- subset(hitBTC, date_time_utc > Sys.time()-60*60*24*31)
 # Rename price field
 hitBTC <- rename(hitBTC, PriceUSD = 'bid_1_price')
 
+# Adjust PriceUSD to be numeric
+hitBTC$PriceUSD <- as.numeric(hitBTC$PriceUSD)
+
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
-                geom_point() +
+                geom_line() +
                 labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
                      caption='Data source: HitBTC.com') + 
                 stat_smooth() + 
@@ -56,7 +53,7 @@ hitBTC_2 <- subset(hitBTC, date_time_utc > Sys.time()-60*60*24*2)
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC_2,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
-               #geom_line() +
+               geom_line() +
                geom_point() +
                labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - UTC'),
                     caption='Data source: HitBTC.com') + 
