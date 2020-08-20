@@ -32,7 +32,7 @@ hitBTC <- rename(hitBTC, PriceUSD = 'bid_1_price')
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
-                geom_line() +
+                geom_point() +
                 labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
                      caption='Data source: HitBTC.com') + 
                 stat_smooth() + 
@@ -56,7 +56,7 @@ hitBTC_2 <- subset(hitBTC, date_time_utc > Sys.time()-60*60*24*2)
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC_2,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
-               geom_line() +
+               #geom_line() +
                geom_point() +
                labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - UTC'),
                     caption='Data source: HitBTC.com') + 
