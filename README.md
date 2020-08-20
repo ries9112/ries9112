@@ -10,7 +10,7 @@
 
 The past 31 days of data are being shown, and the data and GIF shown updates hourly.
 
-###### [data source: HitBTC Orderbooks (API pull)](https://hitbtc.com/btc-to-usd)
+###### [data source: HitBTC Orderbooks](https://hitbtc.com/btc-to-usd)
 
 ## Press on the button below to show the rest of this document:
 <details>
