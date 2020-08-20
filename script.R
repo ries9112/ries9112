@@ -9,7 +9,7 @@ library(dplyr)
 
 board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","hitBTC_orderbooks_github")
 
-hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github"))
+hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github")
 
 # Filter data to top 20 ranked cryptos
 #hitBTC <- subset(hitBTC, Rank < 20)
