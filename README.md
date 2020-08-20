@@ -4,7 +4,7 @@
 
 [![Linkedin](https://img.shields.io/badge/-Riccardo_Esclapon-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/esclaponriccardo/)](https://www.linkedin.com/in/esclaponriccardo/)
 
-### Below is an animated GIF showing cryptocurrency prices for the past 31 days, powered by GitHub Actions and R, which updates once every hour (check the timestamp on the latest data in the subtitle of the chart below):
+### Below is an animated GIF showing cryptocurrency prices for the past 31 days, powered by GitHub Actions and R, which updates once every hour (check the timestamp on the latest data in the subtitle of the chart below - UTC timezone):
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot.gif" width="450">   
 
