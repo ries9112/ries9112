@@ -23,7 +23,6 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
 
 
-
 ## [Click here to access interactive tutorials using this same data, which refreshes hourly](https://predictcrypto.org/tutorials)
 
 ### How do you add a page like this to your own GitHub profile?
