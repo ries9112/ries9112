@@ -44,7 +44,7 @@ anim <- animate(ggplot(data = hitBTC,
                 view_follow(),fps=1)
 
 # Delete animation before making new one
-file_delete('crypto_plot.gif')
+#file_delete('crypto_plot.gif')
 
 # Save gif
 image_write(anim, path='crypto_plot.gif')
@@ -68,7 +68,7 @@ anim <- animate(ggplot(data = hitBTC_2,
                view_follow(),fps=1)
 
 # Delete animation before making new one
-file_delete('crypto_plot_2.gif')
+#file_delete('crypto_plot_2.gif')
 
 # Save gif
 image_write(anim, path='crypto_plot_2.gif')
