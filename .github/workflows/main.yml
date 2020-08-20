@@ -22,12 +22,13 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-      - name: Run script
-        run: |-
-          Rscript -e "db_user <- '${{secrets.db_user}}'"
-          Rscript -e "db_ip <- '${{secrets.db_ip}}'"
-          Rscript -e "db_pswd <- '${{secrets.db_pswd}}'"
-          Rscript -e "source('script.R')"
+      - name: Refresh charts
+        run: |
+          db_user <- "${{secrets.DB_USER}}"
+          db_ip <- "${{secrets.DB_IP}}"
+          db_pswd <- "${{secrets.DB_PSWD}}"
+          source('script.R')
+        shell: Rscript {0}
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
