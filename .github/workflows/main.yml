@@ -15,6 +15,7 @@ jobs:
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr'))"
+          Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
@@ -22,10 +23,6 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-      - name: Refresh charts
-        run: |
-          source('script.R')
-        shell: Rscript {0}
       - name: Commit and push files
         run: |
           git config --local user.email "ries9112@colorado.edu"
