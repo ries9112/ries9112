@@ -139,15 +139,15 @@ image_write(anim, path='crypto_plot_2.gif')
 
 # Update data for toggl 
 library(togglr)
-set_toggl_api_token(Sys.getenv("TOGGL_API"))
+set_toggl_api_token(toString(Sys.getenv("TOGGL_API")))
 # get data
-toggl_data <- get_project_task_detail(project_name = 'vail_contracting')
+toggl_data <- get_time_entries()
 # next add date/time
 toggl_data$DateTime <- Sys.time()
 # read in csv data
-historical_toggl <- read.csv('toggl_data.csv')
+#historical_toggl <- read.csv('toggl_data.csv')
 # union to historical csv data
-toggl_data <- union(toggl_data, historical_toggl)
+#toggl_data <- union(toggl_data, historical_toggl)
 # write to csv file
 write.csv(toggl_data, 'toggl_data.csv')
 
