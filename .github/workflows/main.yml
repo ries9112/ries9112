@@ -15,7 +15,7 @@ jobs:
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr','transformr','togglr'))"
-          Rscript -e "Sys.setenv(TOGGL_API = '${{secrets.TOGGL_API}}')"
+          #Rscript -e "Sys.setenv(TOGGL_API = '${{secrets.TOGGL_API}}')"
           Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
