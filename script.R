@@ -139,7 +139,7 @@ image_write(anim, path='crypto_plot_2.gif')
 
 # Update data for toggl 
 library(togglr)
-set_toggl_api_token(togglr)
+set_toggl_api_token(Sys.getenv(TOGGL_API))
 # get data
 toggl_data <- get_project_task_detail(project_name = 'vail_contracting')
 #temp del:
