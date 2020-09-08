@@ -15,8 +15,8 @@ jobs:
       - name: Install Package Dependencies
         run: |-
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr','transformr','togglr'))"
-          Rscript -e "source('script.R')"
           Rscript -e "togglr <- ${{secrets.TOGGL_API}}"
+          Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
         uses: actions/cache@v1
