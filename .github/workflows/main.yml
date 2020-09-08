@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
-      - name: Install Package Dependencies
+      - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr','transformr','togglr'))"
-          Rscript -e "togglr <- ${{secrets.TOGGL_API}}"
+          Rscript -e "Sys.setenv(TOGGL_API = toString(${{secrets.TOGGL_API}}))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
