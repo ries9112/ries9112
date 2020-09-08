@@ -141,10 +141,16 @@ image_write(anim, path='crypto_plot_2.gif')
 library(togglr)
 set_toggl_api_token(Sys.getenv("TOGGL_API"))
 # get data
-#toggl_data <- get_project_task_detail(project_name = 'vail_contracting')
-#temp del:
-#print(toggl_data)
+toggl_data <- get_project_task_detail(project_name = 'vail_contracting')
 # next add date/time
+toggl_data$DateTime <- Sys.time()
+# read in csv data
+
+# union to csv data
+
+# write to csv file
+write.csv(toggl_data, 'toggl_data.csv')
+
 
 # then write data to db + pin it (for good measure)
 
