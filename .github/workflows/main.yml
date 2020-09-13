@@ -14,9 +14,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Packages and Run Script
         run: |-
-          export PATH="/usr/local/opt/qt/bin:$PATH"
-          brew install gdal
-          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','sf','tramsformr','dplyr','togglr'))"
+          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr','transformr','togglr'))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
