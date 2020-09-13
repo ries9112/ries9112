@@ -15,6 +15,7 @@ jobs:
       - name: Install Packages and Run Script
         run: |-
           brew install gdal
+          sudo apt install -y libudunits2-0 libudunits2-dev
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','sf','tramsformr','dplyr','togglr'))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
