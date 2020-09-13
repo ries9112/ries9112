@@ -6,7 +6,6 @@ library(fs)
 library(gganimate)
 library(magick)
 library(dplyr)
-library(transformr)
 
 board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","hitBTC_orderbooks_github")
 
