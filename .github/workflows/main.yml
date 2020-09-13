@@ -15,8 +15,7 @@ jobs:
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('devtools')"
-          #Rscript -e "devtools::install_github('r-spatial/sf')"
-          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','dplyr','transformr','togglr'))"
+          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','dplyr','togglr'))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
