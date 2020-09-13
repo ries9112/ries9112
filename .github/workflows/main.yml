@@ -15,7 +15,6 @@ jobs:
       - name: Install Packages and Run Script
         run: |-
           Rscript -e "install.packages('devtools')"
-          Rscript -e "devtools::install_github('thomasp85/transformr')"
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','dplyr','togglr'))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
