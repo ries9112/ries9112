@@ -14,7 +14,9 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Packages and Run Script
         run: |-
-          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','fs','magick','gganimate','transformr','dplyr','transformr','togglr'))"
+          Rscript -e "remotes::install_version('sf', '0.9-4')"
+          Rscript -e "remotes::install_version('transformr', '0.1.1')"
+          Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','transformr','dplyr','togglr'))"
           Rscript -e "source('script.R')"
       - name: Cache R packages
         if: runner.os != 'Windows'
