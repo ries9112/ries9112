@@ -32,6 +32,10 @@ jobs:
           r-version: ${{ matrix.config.r }}
       - uses: r-lib/actions/setup-pandoc@master
         
+      - name: Install remotes for linux dependencies
+        run: |-
+          Rscript -e "install.packages('remotes')"
+        
       - name: Install system dependencies
         if: runner.os == 'Linux'
         env:
