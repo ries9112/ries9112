@@ -14,9 +14,8 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Packages and Run Script
         run: |-
-          Rscript -e "install.packages('rgdal')"
           Rscript -e "install.packages('remotes')"
-          Rscript -e "remotes::install_github('r-lib/fs')"
+          Rscript -e "install.packages('sf', type='mac.binary.mavericks', dependencies=TRUE)"
           Rscript -e "remotes::install_github('thomasp85/transformr')"
           Rscript -e "install.packages(c('pins','ggplot2','anytime','ggthemes','magick','gganimate','transformr','dplyr','togglr'))"
           Rscript -e "source('script.R')"
