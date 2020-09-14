@@ -14,7 +14,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install Packages and Run Script
         run: |-
-          sudo apt-get install gdal-bin proj-bin libgdal-dev libproj-dev
+          Rscript -e "install.packages('rgdal')"
           Rscript -e "install.packages('remotes')"
           Rscript -e "remotes::install_github('r-lib/fs')"
           Rscript -e "remotes::install_github('thomasp85/transformr')"
