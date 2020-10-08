@@ -12,6 +12,8 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 ###### [data source: HitBTC Orderbooks](https://hitbtc.com/btc-to-usd)
 
+### [Click here to access interactive tutorials which use cryptocurrency data that refreshes hourly](https://predictcrypto.org/tutorials)
+
 ## Press on the button below to show the rest of this document:
 <details>
   <summary> <b> Show the rest of the page </b>
@@ -21,9 +23,6 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 ### Now only showing the last 2 days:
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
-
-
-## [Click here to access interactive tutorials which use cryptocurrency data that refreshes hourly](https://predictcrypto.org/tutorials)
 
 ![Ricky Github Stats](https://github-readme-stats.vercel.app/api?username=ries9112&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
