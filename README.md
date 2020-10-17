@@ -14,7 +14,7 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 You can download the latest your data yourself by running the following code in R:
 ```R
-install.packages('pins') # only if package is not already installed
+install.packages('pins') # only run this if 'piins' package is not already installed
 library(pins)
 # Point to the correct board
 board_register(name = "pins_board", 
