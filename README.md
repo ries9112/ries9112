@@ -12,6 +12,20 @@ The past 31 days of data are being shown, and the data and GIF shown updates hou
 
 ###### [data source: HitBTC Orderbooks](https://hitbtc.com/btc-to-usd)
 
+You can download the latest your data yourself by running the following code in R:
+```R
+install.packages('pins') # only if package is not already installed
+library(pins)
+# Point to the correct board
+board_register(name = "pins_board", 
+                url = "https://raw.githubusercontent.com/predictcrypto/pins/master/", 
+              board = "datatxt")
+# Pull the data
+cryptodata <- pin_get(name = "hitBTC_orderbook")
+```
+No authentication or anything else is required outside of running the code above to pull the data, which is updated once every hour.
+
+
 ### [Click here to access interactive tutorials which use cryptocurrency data that refreshes hourly](https://predictcrypto.org/tutorials)
 
 ## Press on the button below to show the rest of this document:
