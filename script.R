@@ -27,6 +27,9 @@ hitBTC <- rename(hitBTC, PriceUSD = 'bid_1_price')
 # Adjust PriceUSD to be numeric
 hitBTC$PriceUSD <- as.numeric(hitBTC$PriceUSD)
 
+# Remove symbols where we would expect more data points
+hitBTC <- dplyr::filter(group_by(hitBTC, symbol), n() >= 300)
+
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
