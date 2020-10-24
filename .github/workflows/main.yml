@@ -23,7 +23,7 @@ jobs:
           Rscript -e "install.packages('remotes')"
           brew install pkg-config
           brew install gdal
-          Rscript -e '#install.packages("rgdal", repos = "http://cran.us.r-project.org", type = "source")'
+          Rscript -e 'install.packages("rgdal", repos = "http://cran.us.r-project.org", type = "source")'
           Rscript -e "remotes::install_github('r-spatial/sf')"
           Rscript -e "remotes::install_github('r-lib/fs')"
           Rscript -e "remotes::install_github('thomasp85/transformr')"
