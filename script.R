@@ -1,15 +1,11 @@
-library(pins)
-library(ggplot2)
-library(anytime)
-library(ggthemes)
-library(fs)
-library(gganimate)
-library(magick)
-library(dplyr)
-library(transformr)
+library(pacman)
+# Load packages
+p_load('pins','ggplot2','anytime','ggthemes','fs','gganimate','magick','dplyr','transformr')
 
+# Register Board for data pull
 board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","hitBTC_orderbooks_github")
 
+# Pull data
 hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github")
 
 # Unique data
