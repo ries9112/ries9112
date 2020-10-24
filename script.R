@@ -28,7 +28,7 @@ hitBTC <- rename(hitBTC, PriceUSD = 'bid_1_price')
 hitBTC$PriceUSD <- as.numeric(hitBTC$PriceUSD)
 
 # Remove symbols where we would expect more data points
-hitBTC <- dplyr::filter(group_by(hitBTC, symbol), n() >= 300)
+hitBTC <- dplyr::filter(group_by(hitBTC, symbol), n() >= 500)
 
 # Make gganimated plot:
 anim <- animate(ggplot(data = hitBTC,
@@ -41,7 +41,7 @@ anim <- animate(ggplot(data = hitBTC,
                 xlab('Date Time Collected (UTC)') +
                 ylab('Price USD ($)') +
                 transition_states(symbol) +
-                ggtitle('{closest_state} Price ($) Past 31 Days') +
+                ggtitle(paste('{closest_state} Price ($) Past 31 Days - '), toString(Sys.Date()))) +
                 view_follow(),fps=1)
 
 # Delete animation before making new one
@@ -65,8 +65,8 @@ anim <- animate(ggplot(data = hitBTC_2,
                xlab('Date Time Collected (UTC)') +
                ylab('Price USD ($)') +
                transition_states(symbol) +
-               ggtitle('{closest_state} Price ($) Past 2 Days') +
-               view_follow(),fps=1)
+               ggtitle(paste('{closest_state} Price ($) Past 2 Days - '), toString(Sys.Date()))) +
+               view_follow(),fps=2)
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
