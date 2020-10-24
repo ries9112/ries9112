@@ -22,6 +22,8 @@ board_register(name = "pins_board",
               board = "datatxt")
 # Pull the data
 cryptodata <- pin_get(name = "hitBTC_orderbook")
+# Show the data
+cryptodata
 ```
 No authentication or anything else is required outside of running the code above to pull the data, which is updated once every hour.
 
