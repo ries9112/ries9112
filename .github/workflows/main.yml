@@ -1,9 +1,7 @@
 name: Hourly Update Chart GIF
 on:
-  push:
-    branches: [master]
   schedule:
-    - cron:  '08 * * * *'
+    - cron: "8 * * * *"
 
 jobs:
   build:
