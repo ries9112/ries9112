@@ -12,7 +12,7 @@ hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github")
 hitBTC <- distinct(hitBTC, pkey, .keep_all = T)
 
 # Remove unwanted symbols (USD indexes)
-hitBTC <- filter(hitBTC, symbol == 'LEO')
+hitBTC <- filter(hitBTC, symbol != 'LEO')
 
 # Convert date/time
 hitBTC$date_time_utc <- as.POSIXct(hitBTC$date_time_utc, format="%Y-%m-%d %H:%M:%S")
