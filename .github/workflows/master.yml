@@ -20,8 +20,9 @@ jobs:
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
       - name: Run Script
         run: |-
-          Rscript -e "install.packages('pacman')"
-          Rscript -e "install.packages('magick')"
+          Rscript -e "install.packages('renv')"
+          Rscript -e 'renv::consent(provided = TRUE)'
+          Rscript -e "renv::restore()"
           Rscript -e "source('script.R')"
       - name: Commit and push files
         run: |
