@@ -41,7 +41,7 @@ anim <- animate(ggplot(data = hitBTC,
                 ylab('Price USD ($)') +
                 transition_states(symbol) +
                 ggtitle(paste('{closest_state} Price ($) Past 31 Days -', toString(Sys.Date()), '(UTC)')) +
-                view_follow(),fps=3)
+                view_follow(),fps=2)
 
 # Delete animation before making new one
 file_delete('crypto_plot.gif')
@@ -65,7 +65,7 @@ anim <- animate(ggplot(data = hitBTC_2,
                ylab('Price USD ($)') +
                transition_states(symbol) +
                ggtitle(paste('{closest_state} Price ($) Past 2 Days -', toString(Sys.Date()), '(UTC)')) +
-               view_follow(),fps=3)
+               view_follow(),fps=2)
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
