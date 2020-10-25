@@ -11,6 +11,9 @@ hitBTC <- pin_get("hitBTC_orderbooks_github", "hitBTC_orderbooks_github")
 # Unique data
 hitBTC <- distinct(hitBTC, pkey, .keep_all = T)
 
+# Remove unwanted symbols (USD indexes)
+hitBTC <- filter(hitBTC, symbol == 'LEO')
+
 # Convert date/time
 hitBTC$date_time_utc <- as.POSIXct(hitBTC$date_time_utc, format="%Y-%m-%d %H:%M:%S")
 
@@ -38,7 +41,7 @@ anim <- animate(ggplot(data = hitBTC,
                 ylab('Price USD ($)') +
                 transition_states(symbol) +
                 ggtitle(paste('{closest_state} Price ($) Past 31 Days -', toString(Sys.Date()), '(UTC)')) +
-                view_follow(),fps=1)
+                view_follow(),fps=4)
 
 # Delete animation before making new one
 file_delete('crypto_plot.gif')
@@ -62,7 +65,7 @@ anim <- animate(ggplot(data = hitBTC_2,
                ylab('Price USD ($)') +
                transition_states(symbol) +
                ggtitle(paste('{closest_state} Price ($) Past 2 Days -', toString(Sys.Date()), '(UTC)')) +
-               view_follow(),fps=2)
+               view_follow(),fps=4)
 
 # Delete animation before making new one
 file_delete('crypto_plot_2.gif')
