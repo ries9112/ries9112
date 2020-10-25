@@ -21,6 +21,7 @@ jobs:
       - name: Run Script
         run: |-
           Rscript -e "install.packages('pacman')"
+          Rscript -e "install.packages('magick')"
           Rscript -e "source('script.R')"
       - name: Commit and push files
         run: |
