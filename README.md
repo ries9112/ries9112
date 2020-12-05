@@ -43,6 +43,7 @@ No authentication or anything else is required outside of running the code above
 
 ![Ricky Github Stats](https://github-readme-stats.vercel.app/api?username=ries9112&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
+### Some of My Favorite R Resources: https://www.notion.so/Programming-Resources-cf8986603ddc4968bbc8f7e835430b89
 
 ### How do you add a page like this to your own GitHub profile?
 
