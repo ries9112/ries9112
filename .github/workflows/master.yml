@@ -1,7 +1,7 @@
 name: Update GIFs
 on:  
   schedule:
-    - cron: '10 * * * *' 
+    - cron: '21 * * * *' 
 
 jobs:
   build:
@@ -16,6 +16,9 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ matrix.config.r }}-3-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
+      - name: Fix install
+        run: |-
+          brew install gcc
       - name: Run Script
         run: |-
           Rscript -e "install.packages('renv')"
