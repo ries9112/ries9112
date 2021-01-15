@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: windows-latest
     steps:
       - name: Fix install
         run: |-
