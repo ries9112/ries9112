@@ -16,7 +16,7 @@ jobs:
           restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-3-
       - name: Fix install
         run: |-
-          brew install gcc
+          brew install gfortran
       - name: Run Script
         run: |-
           Rscript -e "install.packages('renv')"
