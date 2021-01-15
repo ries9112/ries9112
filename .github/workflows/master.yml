@@ -1,7 +1,5 @@
 name: Update GIFs
-on:  
-  schedule:
-    - cron: '21 * * * *' 
+on: [push]
 
 jobs:
   build:
