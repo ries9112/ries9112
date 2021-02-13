@@ -155,4 +155,3 @@ image_write(anim, path='crypto_plot_2.gif')
 
 # then write data to db + pin it (for good measure)
 
-
