@@ -37,6 +37,12 @@ No authentication or anything else is required outside of running the code above
 <p style="font-size:30px">
 </p> </summary>  
 
+### Ethereum Price Trend:
+
+<img src="https://github.com/ries9112/ries9112/blob/master/Ethereum.png" width="450">   
+
+*Points are colored in green if the latest price is higher than two days ago, and red if it is lower than two days ago.*
+
 ### Now only showing the last 2 days:
 
 <img src="https://github.com/ries9112/ries9112/blob/master/crypto_plot_2.gif" width="450">   
