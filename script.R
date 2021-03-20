@@ -1,6 +1,6 @@
 library(pacman)
 # Load packages
-p_load('pins','ggplot2','anytime','ggthemes','fs','gganimate','magick','dplyr','transformr')
+p_load('pins','ggplot2','anytime','ggthemes','fs','gganimate','magick','dplyr','transformr', 'ggforce')
 
 # Register Board for data pull
 board_register("https://raw.githubusercontent.com/predictcrypto/pins/master/","hitBTC_orderbooks_github")
@@ -72,6 +72,52 @@ file_delete('crypto_plot_2.gif')
 
 # Save gif
 image_write(anim, path='crypto_plot_2.gif')
+
+# Make ETH specific chart
+eth_data = filter(hitBTC, symbol=='ETH')
+# Ethereum Price - green when positive trend in last 2 days - red when negative trend in last 2 days
+if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$ask_1_price > eth_data[eth_data$date_time_utc == min(filter(hitBTC_2,symbol=='ETH')$date_time_utc, na.rm=T),]$ask_1_price){
+  ggplot(data = eth_data,
+         aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
+    geom_line() +
+    geom_point(size=0.5, color='dark green') +
+    labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
+         caption='Data source: HitBTC API') + 
+    geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
+                          label = date_time_utc,
+                          description = paste0('Price spike to $', ask_1_price))) +
+    # Now the same to circle the minimum price:
+    geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
+                          label = date_time_utc,
+                          description = paste0('Price drop to $', ask_1_price))) +
+    theme_economist() +
+    xlab('Date Time Collected (UTC)') +
+    ylab('Price USD ($)') +
+    ggtitle(paste('Ethereum Price ($) - Past 31 Days - Hourly')) 
+} else if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$ask_1_price > eth_data[eth_data$date_time_utc == min(filter(hitBTC_2,symbol=='ETH')$date_time_utc, na.rm=T),]$ask_1_price){
+    
+    ggplot(data = eth_data,
+           aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
+      geom_line() +
+      geom_point(size=0.5, color='dark red') +
+      labs(subtitle=paste('Latest data collected on:', max(eth_data$date_time_utc), ' - UTC'),
+           caption='Data source: HitBTC API') + 
+      
+      geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
+                            label = date_time_utc,
+                            description = paste0('Price spike to $', ask_1_price))) +
+      # Now the same to circle the minimum price:
+      geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
+                            label = date_time_utc,
+                            description = paste0('Price drop to $', ask_1_price))) +
+      theme_economist() +
+      xlab('Date Time Collected (UTC)') +
+      ylab('Price USD ($)') +
+      ggtitle(paste('Ethereum Price ($) - Past 31 Days - Hourly')) 
+}
+# Save chart
+ggsave('Ethereum.png')
+
 
 # Make more charts
 # Filter to last 7 days
