@@ -80,7 +80,7 @@ if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$as
   ggplot(data = eth_data,
          aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
     geom_line() +
-    geom_point(size=0.5, color='dark green') +
+    geom_point(size=1, color='dark green') +
     labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
          caption='Data source: HitBTC API') + 
     geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
@@ -99,7 +99,7 @@ if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$as
     ggplot(data = eth_data,
            aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
       geom_line() +
-      geom_point(size=0.5, color='dark red') +
+      geom_point(size=1, color='dark red') +
       labs(subtitle=paste('Latest data collected on:', max(eth_data$date_time_utc), ' - UTC'),
            caption='Data source: HitBTC API') + 
       
