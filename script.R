@@ -34,7 +34,7 @@ anim <- animate(ggplot(data = hitBTC,
                aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
                 geom_line() +
                 labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
-                     caption='Data source: HitBTC.com') + 
+                     caption='Data source: HitBTC API') + 
                 stat_smooth() + 
                 theme_economist() +
                 xlab('Date Time Collected (UTC)') +
@@ -59,7 +59,7 @@ anim <- animate(ggplot(data = hitBTC_2,
                geom_line() +
                geom_point() +
                labs(subtitle=paste('Latest data collected on:', max(hitBTC_2$date_time_utc), ' - UTC'),
-                    caption='Data source: HitBTC.com') + 
+                    caption='Data source: HitBTC API') + 
                theme_economist() +
                xlab('Date Time Collected (UTC)') +
                ylab('Price USD ($)') +
