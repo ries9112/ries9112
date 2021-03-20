@@ -79,7 +79,7 @@ eth_data = filter(hitBTC, symbol=='ETH')
 if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$ask_1_price > eth_data[eth_data$date_time_utc == min(filter(hitBTC_2,symbol=='ETH')$date_time_utc, na.rm=T),]$ask_1_price){
   ggplot(data = eth_data,
          aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
-    geom_line(1.2) +
+    geom_line(size=1.2) +
     geom_point(size=0.7, color='dark green') +
     labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
          caption='Data source: HitBTC API') + 
