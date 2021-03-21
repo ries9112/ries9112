@@ -94,7 +94,7 @@ if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$as
     xlab('Date Time Collected (UTC)') +
     ylab('Price USD ($)') +
     ggtitle(paste('Ethereum Price ($) - Past 31 Days - Hourly')) 
-} else if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$ask_1_price > eth_data[eth_data$date_time_utc == min(filter(hitBTC_2,symbol=='ETH')$date_time_utc, na.rm=T),]$ask_1_price){
+} else if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$ask_1_price < eth_data[eth_data$date_time_utc == min(filter(hitBTC_2,symbol=='ETH')$date_time_utc, na.rm=T),]$ask_1_price){
     
     ggplot(data = eth_data,
            aes(x = as.POSIXct(date_time_utc), y = PriceUSD, group = symbol)) + 
