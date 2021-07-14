@@ -83,13 +83,13 @@ if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$as
     geom_point(size=0.7, color='dark green') +
     labs(subtitle=paste('Latest data collected on:', max(hitBTC$date_time_utc), ' - UTC'),
          caption='Data source: HitBTC API') + 
-    geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
-                          label = date_time_utc,
-                          description = paste0('Price spike to $', ask_1_price))) +
+    #geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
+    #                      label = date_time_utc,
+    #                      description = paste0('Price spike to $', ask_1_price))) +
     # Now the same to circle the minimum price:
-    geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
-                          label = date_time_utc,
-                          description = paste0('Price drop to $', ask_1_price))) +
+    #geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
+    #                      label = date_time_utc,
+    #                      description = paste0('Price drop to $', ask_1_price))) +
     theme_economist() +
     xlab('Date Time Collected (UTC)') +
     ylab('Price USD ($)') +
@@ -103,13 +103,13 @@ if (eth_data[eth_data$date_time_utc == max(eth_data$date_time_utc, na.rm=T),]$as
       labs(subtitle=paste('Latest data collected on:', max(eth_data$date_time_utc), ' - UTC'),
            caption='Data source: HitBTC API') + 
       
-      geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
-                            label = date_time_utc,
-                            description = paste0('Price spike to $', ask_1_price))) +
+      #geom_mark_ellipse(aes(filter = ask_1_price == max(ask_1_price),
+      #                      label = date_time_utc,
+      #                      description = paste0('Price spike to $', ask_1_price))) +
       # Now the same to circle the minimum price:
-      geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
-                            label = date_time_utc,
-                            description = paste0('Price drop to $', ask_1_price))) +
+      #geom_mark_ellipse(aes(filter = ask_1_price == min(ask_1_price),
+      #                      label = date_time_utc,
+      #                      description = paste0('Price drop to $', ask_1_price))) +
       theme_economist() +
       xlab('Date Time Collected (UTC)') +
       ylab('Price USD ($)') +
