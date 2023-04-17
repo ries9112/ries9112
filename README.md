@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+(I need to update this 😅)
+
 ### My name is Riccardo but I go by Ricky. I love <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" data-canonical-src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/r/r.png" width="30" height="28" /> and data automation. This document gets updated hourly.
 
 [![Linkedin](https://img.shields.io/badge/-Riccardo_Esclapon-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/esclaponriccardo/)](https://www.linkedin.com/in/esclaponriccardo/)
