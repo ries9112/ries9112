@@ -24,7 +24,7 @@ board_register(name = "pins_board",
                 url = "https://raw.githubusercontent.com/predictcrypto/pins/master/", 
               board = "datatxt")
 # Pull the data
-cryptodata <- pin_get(name = "hitBTC_orderbook")
+cryptodata <- pin_get(board = "pins_board", name = "hitBTC_orderbook")
 # Show the data
 cryptodata
 ```
